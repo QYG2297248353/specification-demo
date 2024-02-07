@@ -1,0 +1,56 @@
+{
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-rational-order",
+    "stylelint-config-recommended-vue"
+  ],
+  "overrides": [
+    {
+      "files": [
+        "*.vue",
+        "**/*.vue"
+      ],
+      "rules": {
+        "unit-allowed-list": [
+          "em",
+          "rem",
+          "s",
+          "px",
+          "%",
+          "vh",
+          "vw",
+          "deg"
+        ]
+      }
+    },
+    {
+      "files": [
+        "*.md",
+        "**/*.md"
+      ],
+      "customSyntax": "postcss-markdown"
+    },
+    {
+      "files": [
+        "*.less",
+        "**/*.less"
+      ],
+      "customSyntax": "postcss-less"
+    }
+  ],
+  "plugins": [
+    "stylelint-order",
+    "stylelint-config-rational-order/plugin"
+  ],
+  "rules": {
+    "order/properties-order": [],
+    "plugin/rational-order": [
+      true,
+      {
+        "border-in-box-model": false,
+        "empty-line-between-groups": true
+      }
+    ],
+    "declaration-empty-line-before": null
+  }
+}
